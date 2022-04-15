@@ -1,7 +1,7 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  running-python-script:
     runs-on: ubuntu-latest
     steps:
       - run: echo "This job is running on ${{ runner.os }}"
