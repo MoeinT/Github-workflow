@@ -11,5 +11,8 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: '3.9'
-      - run: python3
-      - run: print("Hello, world!")
+      - uses: jannekem/run-python-script-action@v1
+        with: 
+          script: |
+          import os 
+          [item for item in os.listdir()]
