@@ -12,7 +12,9 @@ jobs:
         with:
           python-version: '3.9'
       - uses: jannekem/run-python-script-action@v1
-        with: 
+        with:
           script: |
-          import os 
-          [item for item in os.listdir()]
+            import os
+            print("Directory contents:")
+            for f in os.listdir():
+                print(f)
