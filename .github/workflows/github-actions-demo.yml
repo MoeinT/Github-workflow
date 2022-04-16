@@ -19,6 +19,8 @@ jobs:
             print([f for f in os.listdir()])
       - name: install poetry 
         uses: snok/install-poetry@v1
+        with:
+          virtualenvs-in-project: True
       - name: execute py script 
         run: |
             cd scripts
