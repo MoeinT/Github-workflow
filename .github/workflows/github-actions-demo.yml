@@ -19,5 +19,6 @@ jobs:
             print([f for f in os.listdir()])
       - name: execute py script 
         run: |
+            cd scripts
             python get_blobs.py
         
