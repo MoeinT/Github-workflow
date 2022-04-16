@@ -19,5 +19,5 @@ jobs:
             print([f for f in os.listdir()])
       - name: execute py script 
         run: |
-            poetry run python get_blobs.py
+            python get_blobs.py
         
