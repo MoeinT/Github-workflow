@@ -20,5 +20,5 @@ jobs:
       - name: execute py script 
         run: |
             cd scripts
-            python get_blobs.py
+            poetry run python get_blobs.py
         
