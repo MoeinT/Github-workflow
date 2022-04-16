@@ -17,6 +17,8 @@ jobs:
             import os
             print("Directory contents:")
             print([f for f in os.listdir()])
+      - name: install poetry 
+        uses: snok/install-poetry@v1
       - name: execute py script 
         run: |
             cd scripts
