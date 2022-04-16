@@ -20,5 +20,6 @@ jobs:
       - name: execute py script 
         run: |
             cd scripts
+            poetry install
             poetry run python get_blobs.py
         
