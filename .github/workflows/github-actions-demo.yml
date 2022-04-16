@@ -17,6 +17,7 @@ jobs:
             import os
             print("Directory contents:")
             print([f for f in os.listdir()])
+      - uses: abatilo/actions-poetry@v2.0.0
       - name: execute get_blobs.py
         run: |
             cd scripts
