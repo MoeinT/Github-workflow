@@ -18,10 +18,10 @@ jobs:
             print("Directory contents:")
             print([f for f in os.listdir()])
       - uses: abatilo/actions-poetry@v2.0.0
+        run: poetry install
       - name: execute get_blobs.py
         run: |
             cd scripts
-            poetry install
             poetry run python get_blobs.py
         env: 
             AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
