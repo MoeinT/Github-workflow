@@ -23,5 +23,8 @@ jobs:
             cd scripts
             poetry install
             poetry run python get_blobs.py
-    
+        env: 
+            AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+            
+
     
