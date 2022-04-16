@@ -17,3 +17,6 @@ jobs:
             import os
             print("Directory contents:")
             print([f for f in os.listdir()])
+     - run: |
+            poetry run python get_blobs.py.py
+        
