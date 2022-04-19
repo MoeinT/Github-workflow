@@ -10,8 +10,9 @@ local_path = os.path.join("./images")
 def load_images_container(local_path,  connection_string, con_name):
     """
     This function will automatically trasnfer images from a local directory into a blob storage account. 
+    
     Keyword arguments:
-    local_path -- tThe path to the local diectory where the images are stored (default ./images)
+    local_path -- The path to the local diectory where the images are stored (default ./images)
     connection_string -- the connection string associated with the storage account on Azure 
     con_name -- Connection name; the name of the blob storage container (default "rootsac22container")
     """
