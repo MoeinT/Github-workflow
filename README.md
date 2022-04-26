@@ -1,3 +1,6 @@
-# Github-workflow
+## Azure Blob storage
 
-Here in our Github workflow we've defined a step that return the total number of images within an Azure blob container!
+Azure Blob Storage is optimized to store massive amounts of semi-structured and unstructured data; in this repository:
+
+- I have created a [script](https://github.com/MoeinT/Github-workflow/blob/feat/get_blobs/scripts/load_blobs.py) that would automatically transfer images from a local directory into a blob storage container on **Azure**.  
+- Automated a workflow using CI/CD actions that would output the number of images within a blob storage each time there's a push to the branch. See my script [script](https://github.com/MoeinT/Github-workflow/blob/feat/get_blobs/scripts/get_blobs.py)
