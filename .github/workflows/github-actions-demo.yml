@@ -1,5 +1,5 @@
 name: learn-github-actions
-on: [push]
+on: [pull_request]
 jobs:
   running-python-script:
     runs-on: ubuntu-latest
