@@ -7,6 +7,9 @@ authors = ["Moein"]
 [tool.poetry.dependencies]
 python = "^3.10"
 azure-storage-blob = "^12.11.0"
+black = "^22.3.0"
+pytest = "^7.1.2"
+isort = "^5.10.1"
 
 [tool.poetry.dev-dependencies]
 

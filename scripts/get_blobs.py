@@ -1,11 +1,14 @@
-from azure.storage.blob import BlobServiceClient
 import os
-#Running the following scripts outputs the number of images within a blob storage container
 
-connection_string = os.getenv('AZURE_STORAGE_CONNECTION_STRING')
+from azure.storage.blob import BlobServiceClient
+
+# Running the following scripts outputs the number of images within a blob storage container
+
+connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 container_name = "rootsac22container"
 
-def get_list_blobs(connection_string = connection_string, container_name = container_name):
+
+def get_list_blobs(connection_string=connection_string, container_name=container_name):
 
     """
     This function return a blob list of type ItemPaged
@@ -28,16 +31,6 @@ def main():
     blob_list = get_list_blobs()
     print(f"There are {len(list(blob_list))} images in this containers")
 
+
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-
-
-
-
-
