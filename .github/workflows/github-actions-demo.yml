@@ -1,0 +1,38 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  running-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "This job is running on ${{ runner.os }}"
+      - run: echo "The triggering event is ${{ github.event_name }}"
+      - run: echo "The current branch is ${{ github.ref }}"
+      - uses: actions/checkout@v3
+      - name: Setting up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+      - name: Directory contents
+        uses: jannekem/run-python-script-action@v1
+        with:
+          script: |
+            import os
+            print("Directory contents:")
+            print([f for f in os.listdir()])
+      - uses: abatilo/actions-poetry@v2.0.0
+      - name: installing poetry
+        run: poetry install
+      - name: executing get_blobs.py
+        run: |
+            cd scripts
+            poetry run python get_blobs.py
+        env: 
+            AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+      - name: Checking formatting 
+        run: poetry run black . --check --diff
+      - name: Checking import sorting
+        run: poetry run isort . --check --diff
+
+
+     
+
