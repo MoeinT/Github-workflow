@@ -22,7 +22,7 @@ jobs:
       - uses: abatilo/actions-poetry@v2.0.0
       - name: installing poetry..
         run: poetry install
-      - name: Current number of images..
+      - name: Running load_blobs.py & get_blobs.py
         run: |
             cd scripts
             poetry run python load_blobs.py
