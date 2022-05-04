@@ -8,7 +8,7 @@ jobs:
       - run: echo "The triggering event is ${{ github.event_name }}"
       - run: echo "The current branch is ${{ github.ref }}"
       - uses: actions/checkout@v3
-      - name: Setting up Python
+      - name: Setting up Python..
         uses: actions/setup-python@v3
         with:
           python-version: '3.10'
@@ -20,11 +20,12 @@ jobs:
             print("Directory contents:")
             print([f for f in os.listdir()])
       - uses: abatilo/actions-poetry@v2.0.0
-      - name: installing poetry
+      - name: installing poetry..
         run: poetry install
-      - name: executing get_blobs.py
+      - name: Current number of images..
         run: |
             cd scripts
+            poetry run python load_blobs.py
             poetry run python get_blobs.py
         env: 
             AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
