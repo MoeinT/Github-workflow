@@ -49,8 +49,7 @@ def load_images_container(local_path, connection_string, con_name):
             print("Directory not found!")
 
     except Exception as ex:
-        print("Exception:")
-        print(ex)
+        print("Exception:\nThe images already exist in the blob storage container")
 
 
 def main():
