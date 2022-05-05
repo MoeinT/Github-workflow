@@ -25,8 +25,6 @@ def load_images_container(local_path, connection_string, con_name):
         # Connect to a container within that group
         container_client = blob_service_client.get_container_client(con_name)
 
-        # Create a local directory to hold blob data
-
         if os.path.exists(local_path):
 
             images = os.listdir(os.path.join(local_path))
@@ -35,7 +33,6 @@ def load_images_container(local_path, connection_string, con_name):
 
             for im_name in images:
 
-                # Create a blob client using the local file name as the name for the blob
                 blob_client = blob_service_client.get_blob_client(
                     container=con_name, blob=im_name
                 )
